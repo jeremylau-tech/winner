@@ -1,22 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Landing from './pages/landing.js';
+import CoCo from './pages/coco.js';
+import Mission from './pages/mission.js';
+import NetWorth from './pages/networth.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> LALA.
+          <Router>
+            <Routes>
+              <Route path='/' element={<Landing />} />
+              <Route path='/Coco' element={<CoCo />} />
+              <Route path='/Mission' element={<Mission />} />
+              <Route path='/NetWorth' element={<NetWorth />} />
+            </Routes>
+          </Router>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
